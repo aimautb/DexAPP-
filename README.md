@@ -1,68 +1,204 @@
-## Fixed DEX App (BC1 Final Project)
+# 🔄 Mini AMM DEX - Automated Market Maker
 
-📌 **Project Overview**  
-This project is a Fixed Price Decentralized Exchange (DEX) developed as a final assignment for the Blockchain 1 (BC1) course.  
-The application allows users to swap ERC20 tokens at a fixed exchange rate, without using AMM mechanisms like Uniswap or liquidity pools with dynamic pricing.
+> A simplified decentralized exchange built for educational purposes as part of the Blockchain 1 (BC1) course
 
-🧠 **What is a Fixed DEX?**  
-A Fixed DEX is a decentralized exchange where token prices are predefined and do not change based on supply and demand.  
-Example:
-1 aiMAUT = 230 COFFEE
-textUnlike AMM-based DEXs:  
-* ❌ No constant product formula  
-* ❌ No price slippage  
-* ❌ No dynamic pools  
-* ✅ Simple and predictable exchange rate  
+## 📌 Project Overview
 
-🏗️ **Project Architecture**  
-The project consists of the following main components:  
+This project is a **Mini Automated Market Maker (AMM) Decentralized Exchange** that demonstrates core DeFi concepts. The DEX allows users to:
 
-* **ERC20 Token (aiMAUT)**  
-  * Custom token created using OpenZeppelin  
-  * Used as the base token for exchange  
+- 🔁 Swap ERC20 tokens using an AMM pricing model
+- 💧 Provide liquidity to a token pair
+- 💰 Earn fees from swaps proportionally to their liquidity share
 
-* **Fixed DEX Smart Contract**  
-  * Handles token swaps at a fixed rate  
-  * Uses transferFrom and allowance mechanism  
-  * Stores liquidity inside the contract  
+Unlike a Fixed DEX, this project demonstrates **dynamic pricing based on token reserves**.
 
-* **Hardhat Environment**  
-  * Smart contract development and testing  
-  * Local blockchain for development  
+---
 
-📁 **Project Structure**
-DexApp-/
+## 🧠 What is a Mini AMM?
+
+A Mini AMM is a simplified version of popular AMM-based DEXs (like Uniswap), designed for educational purposes.
+
+### 🔁 Core Formula
+
+The exchange rate is calculated using the **constant product formula**:
+
+```
+x * y = k
+```
+
+Where:
+- **x** = reserve of Token A
+- **y** = reserve of Token B
+- **k** = constant value
+
+### Key Characteristics
+
+✅ Dynamic price based on supply & demand  
+✅ Liquidity pool instead of fixed prices  
+✅ Swap fees rewarded to liquidity providers  
+❌ No order book  
+❌ No centralized price control
+
+---
+
+## 🏗️ Project Architecture
+
+### 🔹 ERC20 Tokens
+- Two ERC20 tokens used for swapping (example: `aiMAUT` & `COFFEE`)
+- Implemented using OpenZeppelin Contracts
+- Standard ERC20 functionality
+
+### 🔹 Mini AMM DEX Smart Contract
+- Manages liquidity pools
+- Executes swaps using `x * y = k`
+- Collects swap fees
+- Tracks liquidity providers
+
+### 🔹 Development Environment
+- Built and tested using **Hardhat**
+- Local blockchain for fast testing
+
+---
+
+## 📁 Project Structure
+
+```
+DexApp/
 ├── contracts/
-│ ├── aiMAUT.sol // ERC20 token (to be implemented)
-│ └── FixedDex.sol // Fixed DEX contract (to be implemented)
+│   ├── TokenA.sol          // ERC20 Token A
+│   ├── TokenB.sol          // ERC20 Token B
+│   └── MiniAMM.sol         // AMM DEX contract
 ├── test/
+│   └── MiniAMM.test.js     // Test suite
 ├── ignition/
 ├── hardhat.config.js
 ├── package.json
 └── README.md
-text🔄 **Swap Logic (Planned)**  
-1. User approves token allowance to the DEX contract  
-2. User calls swap() function  
-3. Smart contract calculates output using fixed rate  
-4. Tokens are transferred between user and DEX  
+```
 
-💼 **Business Model**  
-The project can generate revenue through:  
-* Swap fees (e.g. 0.3%)  
-* Fixed spread between token prices  
-* Token issuance for partner projects  
-* Centralized control of fixed-rate liquidity  
+---
 
-🚀 **Current Status**  
-*  Hardhat project initialized  
-*  GitHub repository connected  
-*  ERC20 token implemented  
-*  Fixed DEX contract implemented  
-*  Token swap deployed and tested  
+## 🔄 AMM Swap Logic
 
-🧪 **Tools & Technologies**  
-* Solidity  
-* Hardhat  
-* OpenZeppelin Contracts  
-* Ethers.js  
-* MetaMask
+1️⃣ User provides liquidity (Token A + Token B)  
+2️⃣ Liquidity is stored inside the AMM contract  
+3️⃣ User calls `swap()`  
+4️⃣ Smart contract:
+   - Calculates output using AMM formula
+   - Applies swap fee
+   - Updates pool reserves  
+5️⃣ Tokens are transferred automatically
+
+---
+
+## 💧 Liquidity Provider (LP) Logic
+
+- Users deposit both tokens in a fixed ratio
+- In return, they receive **LP shares**
+- LPs earn:
+  - Swap fees
+  - Proportional ownership of the pool
+- Liquidity can be withdrawn at any time
+
+---
+
+## 💼 Business Model
+
+The Mini AMM DEX can generate value through:
+
+- 💵 Swap fees (e.g. 0.3%)
+- 🎁 Incentives for liquidity providers
+- 🔗 Token pair onboarding
+- 📚 Educational / testnet deployments
+
+---
+
+## 🚀 Current Status
+
+✅ Hardhat project initialized  
+✅ ERC20 tokens deployed  
+✅ Mini AMM smart contract implemented  
+✅ Liquidity pool working  
+✅ Swap logic tested  
+✅ Fee mechanism implemented
+
+---
+
+## 🧪 Tools & Technologies
+
+| Technology | Purpose |
+|-----------|---------|
+| **Solidity** | Smart contract development |
+| **Hardhat** | Development environment |
+| **OpenZeppelin** | ERC20 token standards |
+| **Ethers.js** | Blockchain interaction |
+| **MetaMask** | Wallet integration |
+
+---
+
+## 📚 Educational Purpose
+
+This project is built strictly for **learning purposes** as part of the BC1 course. It demonstrates core DeFi concepts:
+
+- ⚙️ AMM mechanics
+- 💧 Liquidity pools
+- 🔁 Token swaps
+- 🤝 Smart contract interactions
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+```bash
+node >= 14.0.0
+npm >= 6.0.0
+```
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+
+# Navigate to project directory
+cd DexApp
+
+# Install dependencies
+npm install
+```
+
+### Running Tests
+
+```bash
+npx hardhat test
+```
+
+### Deploy to Local Network
+
+```bash
+npx hardhat node
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+---
+
+## 📄 License
+
+This project is for educational purposes only.
+
+---
+
+## 👥 Contributors
+
+Developed as part of the **Blockchain 1 (BC1)** course final assignment.
+BY Aimaut Bolatkhanuly ,  Bekdaulet Bolatov, Nurtore Kaldybai.
+
+---
+
+##  Acknowledgments
+
+- OpenZeppelin for secure smart contract libraries
+- Uniswap for AMM inspiration
+- Hardhat team for excellent development tools
