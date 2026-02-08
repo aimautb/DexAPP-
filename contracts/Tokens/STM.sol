@@ -4,6 +4,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract STM is ERC20 {
     constructor() ERC20("Skin Token", "STM") {
-        _mint(msg.sender, 300 ether);
+        _mint(msg.sender, 3000000 ether);
     }
 }

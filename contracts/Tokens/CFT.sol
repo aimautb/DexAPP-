@@ -4,6 +4,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract CFT is ERC20 {
     constructor() ERC20("CFT Token", "CFT") {
-        _mint(msg.sender, 10000 ether);
+        _mint(msg.sender, 1000000 ether);
     }
 }

@@ -9,8 +9,8 @@ struct Pair
     {uint256 reserve0;
     uint256 reserve1;}
 mapping(bytes32 => Pair) public pairs;
-uint256 public constant FEE = 5; 
-// крч деньги мутим целых 0.5% с каждой сделки, а не 0.3% как в Uniswap прикинь
+uint256 public constant FEE = 3; 
+// крч деньги мутим целых  0.3% как в Uniswap прикинь
 function getPairKey(address tokenA, address tokenB) internal pure returns (bytes32) 
     {return tokenA < tokenB ? keccak256(abi.encodePacked(tokenA, tokenB)): keccak256(abi.encodePacked(tokenB, tokenA));}
 

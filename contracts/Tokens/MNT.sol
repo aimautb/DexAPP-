@@ -4,6 +4,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract MNT is ERC20 {
     constructor() ERC20("MNT Token", "MNT") {
-        _mint(msg.sender, 1500 ether);
+        _mint(msg.sender, 1500000 ether);
     }
 }
