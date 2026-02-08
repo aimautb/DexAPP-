@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Liquidity • MiniAMM</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/liquidity.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Add Liquidity</h1>
+    <p style="text-align:center; color:#666; margin-bottom:24px">
+      Pair always: aiMAUT + selected token
+    </p>
+
+    <select id="tokenB" style="margin-bottom:24px">
+      <option value="0x2e40ac77A17cfBcEDdC1725f216A57b3C2B949af">CFT</option>
+      <option value="0x5dDc53639eB2132Bdd42D7369A28cd910DE3dd44">STM</option>
+      <option value="0x101aCA02B96BcdC926f9eb917f56F08E322c7e44">GMT</option>
+      <option value="0xEa8C28d8879C7393DC9a9F798Bd93893fC4c1bbC">MNT</option>
+    </select>
+
+    <div id="reserves" class="price-box">
+      Reserves: —<br>
+      Rate: —
+    </div>
+
+    <div class="token-row">
+      <span style="width:120px; color:#00ff9d">aiMAUT</span>
+      <input type="number" id="amountA" placeholder="0.0" step="any">
+    </div>
+
+    <div class="token-row" style="margin-top:16px">
+      <span id="tokenBSymbol" style="width:120px">CFT</span>
+      <input type="number" id="amountB" placeholder="0.0" step="any">
+    </div>
+    <button id="addBtn" style="margin-top:32px">Add Liquidity</button>
+    <div id="status" class="status"></div>
+  </div>
+  <nav class="bottom-nav">
+    <button id="goMain" class="nav-btn">🏠 Main</button>
+    <button id="goSwap" class="nav-btn">🔁 Swap</button>
+    <button id="goLiq" class="nav-btn active">💧 Liquidity</button>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+  <script src="js/wallet.js"></script>
+  <script src="js/liquidity.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>
