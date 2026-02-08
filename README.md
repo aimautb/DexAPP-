@@ -302,27 +302,11 @@ This project demonstrates:
 
 Final Project for **Blockchain 1 (BC1)** course
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - OpenZeppelin for secure contract libraries
 - Uniswap for AMM design inspiration
 - Hardhat development environment
 - Ethereum community
 
----
 
-## 📞 Support
-
-For questions or issues, please open an issue in the repository or contact the development team.
-
----
-
-**Built with ❤️ for blockchain education**
