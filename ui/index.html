@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MiniAMM DEX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-200 min-h-screen flex items-center justify-center">
+  <div class="max-w-sm w-full bg-zinc-900 rounded-3xl p-10 text-center">
+    <h1 class="text-5xl font-bold text-emerald-400 mb-2">MiniAMM</h1>
+    <p class="text-zinc-400 mb-10">Sepolia • DEX</p>
+
+    <button id="connectBtn" class="w-full bg-emerald-400 hover:bg-emerald-500 text-black font-bold py-5 rounded-2xl text-xl transition">
+      Connect MetaMask
+    </button>
+
+    <div id="status" class="mt-6 text-sm text-zinc-400 min-h-[24px]"></div>
+
+    <div class="grid grid-cols-2 gap-4 mt-12">
+      <button id="goSwap" disabled class="bg-zinc-800 hover:bg-zinc-700 border border-emerald-400 text-emerald-400 font-semibold py-10 rounded-3xl text-xl transition flex flex-col items-center gap-3">
+        <span class="text-4xl">⇄</span>
+        <span>Swap</span>
+      </button>
+      <button id="goLiq" disabled class="bg-zinc-800 hover:bg-zinc-700 border border-emerald-400 text-emerald-400 font-semibold py-10 rounded-3xl text-xl transition flex flex-col items-center gap-3">
+        <span class="text-4xl">💧</span>
+        <span>Liquidity</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+  <script src="js/wallet.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>

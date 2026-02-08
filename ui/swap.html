@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swap • MiniAMM</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Swap</h1>
+
+    <div class="token-row">
+      <select id="inToken">
+        <option value="0xe077631F0357c50c0c97A7C5016286e91A87aBE6">aiMAUT</option>
+        <option value="0x5dDc53639eB2132Bdd42D7369A28cd910DE3dd44">STM</option>
+        <option value="0x101aCA02B96BcdC926f9eb917f56F08E322c7e44">GMT</option>
+        <option value="0xEa8C28d8879C7393DC9a9F798Bd93893fC4c1bbC">MNT</option>
+        <option value="0x2e40ac77A17cfBcEDdC1725f216A57b3C2B949af">CFT</option>
+      </select>
+      <input type="number" id="amountIn" placeholder="0.0" step="any">
+    </div>
+
+    <div style="text-align:center;font-size:28px;margin:10px 0">↓</div>
+
+    <select id="outToken">
+      <option value="0xe077631F0357c50c0c97A7C5016286e91A87aBE6">aiMAUT</option>
+      <option value="0x5dDc53639eB2132Bdd42D7369A28cd910DE3dd44">STM</option>
+      <option value="0x101aCA02B96BcdC926f9eb917f56F08E322c7e44">GMT</option>
+      <option value="0xEa8C28d8879C7393DC9a9F798Bd93893fC4c1bbC">MNT</option>
+      <option value="0x2e40ac77A17cfBcEDdC1725f216A57b3C2B949af">CFT</option>
+    </select>
+
+    <div id="price" class="price-box">Price: —</div>
+
+    <button id="swapBtn">Swap</button>
+    <div id="status" class="status"></div>
+  </div>
+  <nav class="bottom-nav">
+    <button id="goMain" class="nav-btn">🏠Main</button>
+    <button id="goSwap" class="nav-btn active">🔁Swap</button>
+    <button id="goLiq" class="nav-btn">💧Liquidity</button>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+  <script src="js/wallet.js"></script>
+  <script src="js/swap.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>
